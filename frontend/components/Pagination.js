@@ -32,7 +32,7 @@ const Pagination = props => (
             pathname: 'items',
             query: { page: page - 1 }
           }}>
-            <a classname="prev" aria-disabled={page <= 1}> 👈 Prev</a>
+            <a className="prev" aria-disabled={page <= 1}> 👈 Prev</a>
           </Link>
           <p>
             {props.page} of {pages}
@@ -42,7 +42,7 @@ const Pagination = props => (
             pathname: 'items',
             query: { page: page + 1 },
           }}>
-            <a classname="prev" aria-disabled={page >= pages}>Next 👉 </a>
+            <a className="prev" aria-disabled={page >= pages}>Next 👉 </a>
           </Link>
         </PaginationStyles>
       );
