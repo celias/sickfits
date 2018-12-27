@@ -32,6 +32,8 @@ const Mutations = {
     // Delete it
     return ctx.db.mutation.deleteItem({ where }, info);
   },
+
+
   async signup(parent, args, ctx, info) {
     // toLowerCase to ensure that the email works
     args.email = args.email.toLowerCase();
@@ -48,16 +50,32 @@ const Mutations = {
       },
       info
     );
-    // Create JWT token
-    // APP_SECRET comes from the variables.env file
     const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET);
-
-    // We set the jwt as a cookie on the response
     ctx.response.cookie('token', token, {
       httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24 * 365, // 1yr long cookie
+      maxAge: 1000 * 60 * 60 * 24 * 365,
     });
-    // Finallyyyy we return the user to the browser
+    return user;
+  },
+  // args is destructured as { email, password }
+  // rather than typing args.email args.password
+  async signin(parent, { email, password }, ctx, info) {
+    // 1. Check if there is a user with that email
+    const user = await ctx.db.query.user({ where: { email } });
+    if (!user) {
+      throw new Error(`No such user found for email ${email}`);
+    }
+    // 2. Check if their PW is correct
+    const valid = await bcyrpt.compare(password, user.password);
+    if (!valid) {
+      throw new Error('Invalid Password!');
+    }
+    // 3. Generate JWT Token
+    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET);
+    ctx.response.cookie('token', token, {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24 * 365,
+    });
     return user;
   },
 };
