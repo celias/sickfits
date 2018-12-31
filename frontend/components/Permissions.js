@@ -36,14 +36,14 @@ const Permissions = props => (
               <tr>
                 <th>Name</th>
                 <th>Email</th>
-                {possiblePermissions.map(permission =>
-                  <th>{permission}</th>)}
+                {possiblePermissions.map((permission, index) =>
+                  <th key={index}>{permission}</th>)}
                 <th>👇</th>
               </tr>
             </thead>
             <tbody>
-              {data.users.map(user =>
-                <User user={user} />
+              {data.users.map((user, index) =>
+                <User key={index} user={user} />
               )}
             </tbody>
           </Table>
@@ -61,8 +61,8 @@ class User extends React.Component {
       <tr>
         <td>{user.name}</td>
         <td>{user.email}</td>
-        {possiblePermissions.map(permission => (
-          <td>
+        {possiblePermissions.map((permission, index) => (
+          <td key={index}>
             <label htmlFor={`${user.id}-permission-${permission}`}>
               <input type="checkbox" />
             </label>
