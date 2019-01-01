@@ -110,7 +110,7 @@ class CreateItem extends Component {
               <label htmlFor="price">
                 Price
             <input
-                  type="number"
+                  type="string"
                   id="price"
                   name="price"
                   placeholder="Price"
