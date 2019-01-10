@@ -45,6 +45,7 @@ const CartCount = ({ count }) => (
   <AnimationStyles>
     <TransitionGroup>
       <CSSTransition
+        instanceId="count"
         unmountOnExit
         className="count"
         classNames="count"
