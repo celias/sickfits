@@ -12,20 +12,28 @@ import calcTotalPrice from '../lib/calcTotalPrice';
 
 function totalItems(cart) {
   return cart.reduce((tally, cartItem) => tally + cartItem.quantity, 0)
+  // console.log("Cart: ", cart);
 };
 
 class TakeMyMoney extends React.Component {
+
+  onToken = res => {
+    console.log('On Token Called!');
+    console.log(res.id);
+  }
+
   render() {
-    const data = this.props.children.data.me;
-    console.log("WOWOWO", data);
     return (
       <User>
         {({ data: { me } }) => (
           <StripeCheckout
             name="Sick Fits!"
+            stripeKey="pk_test_XaRy9GyBdNOeSCGRY1SIutBo"
+            currency="USD"
+            token={res => this.onToken(res)}
+            email={me.email}
             image={me.cart[0] && me.cart[0].item.image}
             description={`Order of ${totalItems(me.cart)} items!`}
-            shippingAddress
             amount={calcTotalPrice(me.cart)}>
             {this.props.children}</StripeCheckout>
         )}
