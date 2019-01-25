@@ -26,6 +26,7 @@ type Query {
   me: User
   users: [User]!
   order(id: ID!): Order
+  orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order]!
 }
 
 type User {

@@ -44,7 +44,21 @@ const Query = {
     }
     // 4. Return the order
     return order;
+  },
+  async orders(parent, args, ctx, info) {
+    // 1. Get the Users ID
+    const { userId } = ctx.request;
+    // 2. Check if User is logged in
+    if (!ctx.request.userId) {
+      throw new Error('You must be logged in!');
+    }
+    return ctx.db.query.orders({
+      where: {
+        user: { id: userId }
+      }
+    }, info)
   }
-};
+}
+
 
 module.exports = Query;
