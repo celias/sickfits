@@ -103,6 +103,7 @@ class UserPermissions extends React.Component {
         permissions: this.state.permissions,
         userId: this.props.user.id,
       }}>
+
         {(updatePermissions, { loading, error }) => (
           <>
             {error && <tr><td colspan="8"><Error error={error} /></td></tr>}

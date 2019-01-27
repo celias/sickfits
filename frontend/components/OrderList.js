@@ -44,12 +44,23 @@ class OrderList extends React.Component {
             <h2>You have {orders.length} orders.</h2>
             <OrderUl>
               {orders.map(order => (
-                <OrderItemStyles>
+                <OrderItemStyles key={order.id}>
                   <Link href={{
-                    pathName: '/order',
+                    pathname: '/order',
                     query: { id: order.id },
                   }}>
-                    <a>HI</a>
+                    <a>
+                      <div className="order-meta">
+                        <p>{order.items.reduce((a, b) => a + b.quantity, 0)} Items</p>
+                        <p>{order.items.length} Products</p>
+                        <p>{formatDistance(order.createdAt, new Date())} ago</p>
+                        <p>{formatMoney(order.total)}</p>
+                      </div>
+                      <div className="images">
+                        {order.items.map(item =>
+                          <img src={item.image} alt={item.title} key={item.id} />)}
+                      </div>
+                    </a>
                   </Link>
                 </OrderItemStyles>
               ))}
