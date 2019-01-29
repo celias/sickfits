@@ -39,7 +39,7 @@ const Query = {
     const ownsOrder = order.user.id === ctx.request.userId;
     const hasPermissionToSeeOrder =
       ctx.request.user.permissions.includes('ADMIN');
-    if (!ownsOrder || !hasPermissionToSeeOrder) {
+    if (!ownsOrder && !hasPermissionToSeeOrder) {
       throw new Error('You do not have adequate permissions for this order.');
     }
     // 4. Return the order

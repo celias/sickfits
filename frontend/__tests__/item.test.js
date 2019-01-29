@@ -16,7 +16,7 @@ describe('<Item/>', () => {
     const img = wrapper.find('img');
     expect(img.props().src).toBe(fakeItem.image);
     expect(img.props().alt).toBe(fakeItem.title);
-    console.log(img.debug());
+    // console.log(img.debug());
 
   });
 
@@ -28,5 +28,14 @@ describe('<Item/>', () => {
     expect(wrapper.find('Title a').text()).toBe(fakeItem.title);
     // console.log(fakeItem.title.length)
     // console.log(wrapper.debug());
+  });
+
+  it('renders out the button properly', () => {
+    const wrapper = shallow(<Item item={fakeItem} />);
+    const buttonList = wrapper.find('.buttonList');
+    expect(buttonList.children()).toHaveLength(3);
+    console.log(buttonList.children().length);
+    expect(buttonList.find('Link')).toHaveLength(1);
+    console.log(buttonList.children('Link').length);
   });
 });
