@@ -54,7 +54,6 @@ class CreateItem extends Component {
       body: data,
     });
     const file = await response.json();
-    console.log(file);
     this.setState({
       image: file.secure_url,
       largeImage: file.eager[0].secure_url,
@@ -66,7 +65,7 @@ class CreateItem extends Component {
         {(createItem, { loading, error }) => (
 
 
-          <Form onSubmit={async e => {
+          <Form data-test="form" onSubmit={async e => {
             // stop the form from submitting
             e.preventDefault();
             // call the mutation

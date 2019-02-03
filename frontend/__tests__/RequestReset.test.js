@@ -11,7 +11,7 @@ const mocks = [
       variables: { email: 'gabadiventura@gmail.com' },
     },
     result: {
-      data: { RequestReset: { message: 'success', __typename: 'Message' } },
+      data: { requestReset: { message: 'success', __typename: 'Message' } },
     },
   },
 ];
@@ -41,8 +41,7 @@ describe('<RequestReset />', () => {
       .simulate('change', { target: { name: 'email', value: 'gabadiventura@gmail.com' } });
     // submit the form
     wrapper
-      .find('form')
-      .simulate('submit');
+      .find('form').simulate('submit')
     await wait();
     wrapper.update();
     expect(wrapper.find('p').text()).toContain('Success! Check your email for a reset link.');
