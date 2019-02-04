@@ -4,7 +4,7 @@ const { Prisma } = require('prisma-binding');
 
 const db = new Prisma({
   typeDefs: 'src/generated/prisma.graphql',
-  endpoint: process.env.PRISMA_ENDPOINT,
+  endpoint: 'https://sickfits-production-195205efb1.herokuapp.com/sickfits-prod/prod',
   secret: process.env.PRISMA_SECRET,
   debug: false,
 });
