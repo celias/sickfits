@@ -19,4 +19,4 @@ const signup = props => {
   )
 }
 
-export default signup; 
+export default signup;

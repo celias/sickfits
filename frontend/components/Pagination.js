@@ -35,10 +35,7 @@ const Pagination = props => (
             <a className="prev" aria-disabled={page <= 1}> 👈 Prev</a>
           </Link>
           <p>
-            {props.page} of
-            <span className="totalPages">
-              {pages}
-            </span>
+            {props.page} of <span className="totalPages"> {pages} </span>
           </p>
           <p>{count} Items Total</p>
           <Link prefetch href={{

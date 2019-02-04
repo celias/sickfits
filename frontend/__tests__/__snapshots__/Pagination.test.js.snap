@@ -30,11 +30,13 @@ exports[`<Pagination /> renders pagination for 18 items 1`] = `
   </Link>
   <p>
     1
-     of
+     of 
     <span
       className="totalPages"
     >
+       
       5
+       
     </span>
   </p>
   <p>
