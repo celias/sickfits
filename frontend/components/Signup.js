@@ -42,17 +42,7 @@ class Signup extends Component {
             <fieldset disabled={loading} aria-busy={loading}>
               <h2>Sign up for an account!</h2>
               <Error error={error} />
-              <label htmlFor="name">
-                Name
-          <input
-                  type="text"
-                  name="name"
-                  placeholder="name"
-                  autoComplete="name"
-                  value={this.state.name}
-                  onChange={this.saveToState}
-                />
-              </label>
+
               <label htmlFor="email">
                 Email
           <input
@@ -61,6 +51,17 @@ class Signup extends Component {
                   placeholder="email"
                   autoComplete="email"
                   value={this.state.email}
+                  onChange={this.saveToState}
+                />
+              </label>
+              <label htmlFor="name">
+                Name
+          <input
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  autoComplete="name"
+                  value={this.state.name}
                   onChange={this.saveToState}
                 />
               </label>
