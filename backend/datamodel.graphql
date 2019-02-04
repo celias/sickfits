@@ -1,17 +1,17 @@
 enum Permission {
   ADMIN
-  USER 
+  USER
   ITEMCREATE
   ITEMUPDATE
   ITEMDELETE
   PERMISSIONUPDATE
 }
+
 type User {
   id: ID! @unique
   name: String!
   email: String! @unique
-  password: String
-  reset: String
+  password: String!
   resetToken: String
   resetTokenExpiry: Float
   permissions: [Permission]
@@ -22,7 +22,7 @@ type Item {
   id: ID! @unique
   title: String!
   description: String!
-  image: String!
+  image: String
   largeImage: String
   price: Int!
   user: User!
@@ -31,8 +31,8 @@ type Item {
 type CartItem {
   id: ID! @unique
   quantity: Int! @default(value: 1)
-  item: Item #relationship to Item
-  user: User! #relationship to User
+  item: Item # relationship to Item
+  user: User! # relationship to User
 }
 
 type OrderItem {
@@ -42,7 +42,7 @@ type OrderItem {
   image: String!
   largeImage: String!
   price: Int!
-  quantity: Int! @default(value: "1")
+  quantity: Int! @default(value: 1)
   user: User
 }
 
@@ -55,4 +55,3 @@ type Order {
   createdAt: DateTime!
   updatedAt: DateTime!
 }
-

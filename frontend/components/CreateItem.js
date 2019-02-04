@@ -71,7 +71,7 @@ class CreateItem extends Component {
             // call the mutation
             const response = await createItem();
             // change them to the single item page
-            console.log(response)
+            // console.log(response)
             Router.push({
               pathname: '/item',
               query: { id: response.data.createItem.id },

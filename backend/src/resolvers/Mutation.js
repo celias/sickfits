@@ -209,7 +209,7 @@ const Mutations = {
       });
     // 3. Check if the item is already in their cart, and increment by +1 if it is
     if (existingCartItem) {
-      console.log('Item already in cart')
+      // console.log('Item already in cart')
       return ctx.db.mutation.updateCartItem(
         {
           where: { id: existingCartItem.id },
@@ -280,7 +280,7 @@ const Mutations = {
     const amount = user.cart.reduce((tally, cartItem) =>
       tally + cartItem.item.price * cartItem.quantity, 0
     );
-    console.log(`Going to charge for a total of ${amount}`);
+    // console.log(`Going to charge for a total of ${amount}`);
     // 3. Create the stripe charge(turn token into $$$)
     const charge = await stripe.charges.create({
       amount,

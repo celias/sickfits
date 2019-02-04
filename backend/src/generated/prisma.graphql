@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/gabriella/sickfits/dev
-# timestamp: Thu Jan 24 2019 13:40:56 GMT-0600 (CST)
+# timestamp: Mon Feb 04 2019 12:50:58 GMT-0600 (CST)
 
 type AggregateCartItem {
   count: Int!
@@ -328,7 +328,7 @@ type Item implements Node {
   id: ID!
   title: String!
   description: String!
-  image: String!
+  image: String
   largeImage: String
   price: Int!
   user: User!
@@ -347,7 +347,7 @@ type ItemConnection {
 input ItemCreateInput {
   title: String!
   description: String!
-  image: String!
+  image: String
   largeImage: String
   price: Int!
   user: UserCreateOneInput!
@@ -390,7 +390,7 @@ type ItemPreviousValues {
   id: ID!
   title: String!
   description: String!
-  image: String!
+  image: String
   largeImage: String
   price: Int!
 }
@@ -1792,8 +1792,7 @@ type User implements Node {
   id: ID!
   name: String!
   email: String!
-  password: String
-  reset: String
+  password: String!
   resetToken: String
   resetTokenExpiry: Float
   permissions: [Permission!]!
@@ -1813,8 +1812,7 @@ type UserConnection {
 input UserCreateInput {
   name: String!
   email: String!
-  password: String
-  reset: String
+  password: String!
   resetToken: String
   resetTokenExpiry: Float
   permissions: UserCreatepermissionsInput
@@ -1838,8 +1836,7 @@ input UserCreatepermissionsInput {
 input UserCreateWithoutCartInput {
   name: String!
   email: String!
-  password: String
-  reset: String
+  password: String!
   resetToken: String
   resetTokenExpiry: Float
   permissions: UserCreatepermissionsInput
@@ -1863,8 +1860,6 @@ enum UserOrderByInput {
   email_DESC
   password_ASC
   password_DESC
-  reset_ASC
-  reset_DESC
   resetToken_ASC
   resetToken_DESC
   resetTokenExpiry_ASC
@@ -1879,8 +1874,7 @@ type UserPreviousValues {
   id: ID!
   name: String!
   email: String!
-  password: String
-  reset: String
+  password: String!
   resetToken: String
   resetTokenExpiry: Float
   permissions: [Permission!]!
@@ -1929,7 +1923,6 @@ input UserUpdateDataInput {
   name: String
   email: String
   password: String
-  reset: String
   resetToken: String
   resetTokenExpiry: Float
   permissions: UserUpdatepermissionsInput
@@ -1940,7 +1933,6 @@ input UserUpdateInput {
   name: String
   email: String
   password: String
-  reset: String
   resetToken: String
   resetTokenExpiry: Float
   permissions: UserUpdatepermissionsInput
@@ -1951,7 +1943,6 @@ input UserUpdateManyMutationInput {
   name: String
   email: String
   password: String
-  reset: String
   resetToken: String
   resetTokenExpiry: Float
   permissions: UserUpdatepermissionsInput
@@ -1988,7 +1979,6 @@ input UserUpdateWithoutCartDataInput {
   name: String
   email: String
   password: String
-  reset: String
   resetToken: String
   resetTokenExpiry: Float
   permissions: UserUpdatepermissionsInput
@@ -2173,46 +2163,6 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   password_not_ends_with: String
-  reset: String
-
-  """All values that are not equal to given value."""
-  reset_not: String
-
-  """All values that are contained in given list."""
-  reset_in: [String!]
-
-  """All values that are not contained in given list."""
-  reset_not_in: [String!]
-
-  """All values less than the given value."""
-  reset_lt: String
-
-  """All values less than or equal the given value."""
-  reset_lte: String
-
-  """All values greater than the given value."""
-  reset_gt: String
-
-  """All values greater than or equal the given value."""
-  reset_gte: String
-
-  """All values containing the given string."""
-  reset_contains: String
-
-  """All values not containing the given string."""
-  reset_not_contains: String
-
-  """All values starting with the given string."""
-  reset_starts_with: String
-
-  """All values not starting with the given string."""
-  reset_not_starts_with: String
-
-  """All values ending with the given string."""
-  reset_ends_with: String
-
-  """All values not ending with the given string."""
-  reset_not_ends_with: String
   resetToken: String
 
   """All values that are not equal to given value."""

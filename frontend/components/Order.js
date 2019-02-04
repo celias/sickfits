@@ -40,7 +40,7 @@ class Order extends React.Component {
         {({ data, error, loading }) => {
           if (error) return <Error error={error} />
           if (loading) return <p>Loading...</p>
-          console.log("Teh Order: ", data)
+          // console.log("Teh Order: ", data)
           const order = data.order;
           return (
             <OrderStyles>
