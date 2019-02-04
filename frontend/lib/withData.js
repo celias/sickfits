@@ -8,6 +8,7 @@ function createClient({ headers }) {
     uri: process.env.NODE_ENV === 'development' ? endpoint : productionEndpoint,
     request: operation => {
       operation.setContext({
+        //
         // fetchOptions: {
         //   credentials: 'include',
         // },
