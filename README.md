@@ -11,7 +11,7 @@ The app also includes many server-side aspects including including JWT authentic
 In addition to building both the front and backend, the last 1/3 of the course was spent testing the App.
 
 # Tech Stack
- _FRONTEND_
+ **_FRONTEND_**
 
 _For building the interface_
 
