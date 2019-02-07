@@ -8,7 +8,7 @@ Sick Fits is a full stack online clothing store complete with real credit checko
 
 The app also includes many server-side aspects including including JWT authentication, permissions, sending email, uploading images, and charging credit cards with Stripe.
 
-In addition to building both the front and backend, the last 1/3 of the course was spent testing components with __Jest and Enzyme__.
+In addition to building both the front and backend, the last 1/3 of the course was spent testing the App.
 
 # Tech Stack
 
@@ -16,6 +16,17 @@ _For building the interface_
 
 - React.js - JavaScript Library 
 - Next.js - for server side rendering, routing and tooling
+- React-Apollo - for interfacing with Apollo Client
+- Jest & Enzyme - for Testing
 
+_For Data Management_
+
+- _Apollo Client_
+- Performing GraphQL Mutations
+- Fetching GraphQL Queries
+- Caching GraphQL Data
+- Managing Local State
+- Error and Loading UI States
+- __Apollo Client replaces the need for redux + data fetching/caching libraries__
 
 
