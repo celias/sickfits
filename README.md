@@ -11,9 +11,9 @@ The app also includes many server-side aspects including including JWT authentic
 In addition to building both the front and backend, the last 1/3 of the course was spent testing the App.
 
 # Tech Stack
- **_FRONTEND_**
+ **FRONTEND**
 
-_For building the interface_
+_For building the Interface_
 
 - React.js - JavaScript Library 
 - Next.js - for server side rendering, routing and tooling
@@ -29,5 +29,25 @@ _For Data Management_
 - Managing Local State
 - Error and Loading UI States
 - __Apollo Client replaces the need for redux + data fetching/caching libraries__
+
+**BACKEND**
+
+_An Express/GraphQL Server_
+
+- _GraphQL Yoga_
+- Implementing Query and Mutation Resolvers
+- Custom Server Side Logic
+- Charging Credit Cards with Stripe
+- Sending Email (Dev only with MailTrap)
+- Performing JWT Authentication
+- Checking Permissions
+
+_Prisma_ - A GraphQL Database Interface
+
+- Provides a set of GraphQL CRUD APIs for a MySQL, Postgres or MongoDB Database
+- Schema Definition
+- Data Relationships
+- Queried Directly from our Yoga Server
+- Self-hosted or as-a-service
 
 
