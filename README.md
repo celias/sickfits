@@ -11,11 +11,12 @@ The app also includes many server-side aspects including including JWT authentic
 In addition to building both the front and backend, the last 1/3 of the course was spent testing components with __Jest and Enzyme__.
 
 # Tech Stack
--
+
 _For building the interface_
-__React.js__ - JavaScript Library 
-__Next.js__ - for server side rendering, routing and tooling
-__Styled Components__ - for styling
-__React-Apollo__ - for interfacing with Apollo Client
--
+
+-__React.js__ - JavaScript Library 
+-__Next.js__ - for server side rendering, routing and tooling
+-__Styled Components__ - for styling
+-__React-Apollo__ - for interfacing with Apollo Client
+
 
