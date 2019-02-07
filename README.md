@@ -6,3 +6,6 @@ My final version of the project can be seen [here](https://sickfits-next-react-p
 # Sick Fits
 Sick Fits is a full stack online clothing store complete with real credit checkout. Users can search, sell, add to cart and checkout their favorite items. The application has five main models — __Users, Items, Orders, CartItems, and OrderItems__ — all of which are relational and showcase the power of relational GraphQL Queries.
 
+The app also includes many server-side aspects including including JWT authentication, permissions, sending email, uploading images, and charging credit cards with Stripe.
+
+In addition to building both the front and backend, the last 1/3 of the course was spent testing components with __Jest and Enzyme__.
