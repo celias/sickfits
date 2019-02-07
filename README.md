@@ -11,7 +11,7 @@ The app also includes many server-side aspects including including JWT authentic
 In addition to building both the front and backend, the last 1/3 of the course was spent testing the App.
 
 # Tech Stack
- **FRONTEND**
+ **FRONTEND** 🦄
 
 _For building the Interface_
 
@@ -30,7 +30,7 @@ _For Data Management_
 - Error and Loading UI States
 - __Apollo Client replaces the need for redux + data fetching/caching libraries__
 
-**BACKEND**
+**BACKEND** 🔙
 
 _An Express/GraphQL Server_
 
