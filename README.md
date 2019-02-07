@@ -14,9 +14,8 @@ In addition to building both the front and backend, the last 1/3 of the course w
 
 _For building the interface_
 
--React.js - JavaScript Library 
--Next.js - for server side rendering, routing and tooling
--__Styled Components__ - for styling
--__React-Apollo__ - for interfacing with Apollo Client
+- React.js JavaScript Library 
+- Next.js for server side rendering, routing and tooling
+
 
 
